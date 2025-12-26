@@ -104,7 +104,7 @@ export default function VisionBoard() {
               transition={{ duration: 0.6, delay: 0.4 }}
             >
               <p className="text-body text-cloud max-w-xl">
-                "2026: Where technical excellence, athletic mastery, creative vision, and continuous growth converge into reality."
+                &quot;2026: Where technical excellence, athletic mastery, creative vision, and continuous growth converge into reality.&quot;
               </p>
             </motion.div>
           </div>
