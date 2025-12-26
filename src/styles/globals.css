@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-midnight text-cloud font-sans;
+  overflow-x: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-charcoal;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-stone rounded-full hover:bg-slate;
+  transition: background 0.3s ease;
+}
+
+/* Text selections */
+::selection {
+  @apply bg-graphite text-ivory;
+}
+
+/* Global animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+/* Utility classes for animations */
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Typography utilities - using Tailwind's text size utilities directly */
+/* These are defined in tailwind.config.ts - no need to @apply them here */
+
+/* Text size classes are available as: text-h1, text-h2, text-h3, text-h4, text-body-lg, text-body, text-body-sm */
+/* Use them directly in your JSX: className="text-h1 font-display font-bold" */
+
+/* Glassmorphism effect */
+.glass {
+  @apply bg-charcoal/40 backdrop-blur-md border border-graphite/30;
+}
+
+.glass-dark {
+  @apply bg-midnight/40 backdrop-blur-md border border-charcoal/30;
+}
+
+/* Premium gradient text */
+.gradient-text {
+  @apply bg-gradient-to-r from-cloud via-ivory to-cloud bg-clip-text text-transparent;
+}
+
+/* Smooth focus states */
+.focus-ring {
+  @apply outline-none ring-2 ring-stone ring-offset-2 ring-offset-midnight;
+}
+
+/* Link animations */
+a {
+  @apply transition-colors duration-300;
+}
+
+/* Button base */
+.btn {
+  @apply px-6 py-3 rounded-lg font-semibold transition-all duration-300 focus-ring;
+}
+
+.btn-primary {
+  @apply btn bg-ivory text-midnight hover:bg-cloud;
+}
+
+.btn-secondary {
+  @apply btn bg-graphite text-cloud hover:bg-slate border border-stone;
+}
+
+/* Section spacing */
+.section {
+  @apply py-section px-4 md:px-8;
+}
+
+.section-mobile {
+  @apply md:py-section py-section-mobile;
+}
+
+/* Container */
+.container-max {
+  @apply max-w-7xl mx-auto;
+}
+
+/* Disable animations for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
