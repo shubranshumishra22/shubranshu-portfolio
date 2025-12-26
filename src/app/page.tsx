@@ -6,6 +6,7 @@ import SoftwareEngineer from '@/components/sections/SoftwareEngineer';
 import Projects from '@/components/sections/Projects';
 import BuildWithMe from '@/components/sections/BuildWithMe';
 import GymAndSports from '@/components/sections/GymAndSports';
+import VisionBoard from '@/components/sections/VisionBoard';
 import Media from '@/components/sections/Media';
 import Navigation from '@/components/Navigation';
 import ScrollProgress from '@/components/ScrollProgress';
@@ -24,6 +25,7 @@ export default function Home() {
       <Projects />
       <BuildWithMe />
       <GymAndSports />
+      <VisionBoard />
       <Media />
       <Footer />
       
